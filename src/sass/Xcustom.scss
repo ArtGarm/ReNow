@@ -1,6 +1,10 @@
 .item-wrap{
 	width: 270px;
 }
+.card-title a{
+	text-decoration: none;
+	color: #000933;
+}
 .card-title img{
 	position: absolute;
 	z-index: -1; 
@@ -17,7 +21,7 @@
 	font-size: 12px;
 	font-weight: 300;
 	border-right: 0.5px solid #000000;
-	padding-right: 30px;
+	width: calc(100% / 3 - 2px);
 	span{
 		font-weight: 400;
 	}
@@ -42,18 +46,18 @@
 		margin-left: 8px;
 		margin-right: -13px;
 		cursor: pointer;
-	
+		position: relative;
 		&::before{
 			content: '';
 			position: absolute;
 			width: 10px;
 			height: 1px;
 			background: #fff;
-			top: 27px;
-			right: 5.9px;
+			top: 50%; left: 50%;
+			transform: translate(-50%,-50%);
 			}
 		&:hover:before{
-				background: #4286f4;
+				background: #212121;
 		}
 		&::after{
 			content: '';
@@ -61,11 +65,11 @@
 			width: 1px;
 			height: 10px;
 			background: #fff;
-			top: 22px;
-			right: 9.9px;
+			top: 50%; left: 50%;
+			transform: translate(-50%,-50%);
 			}
 		&:hover:after{
-				background: #4286f4;
+				background: #212121;
 		}	
 	}
 	img{
@@ -74,12 +78,13 @@
 			color: red;
 		}
 }
-	.circle{
+	.bg-heart{
 		background: rgba(0, 0, 0, 0.35);
 		border-radius: 100%;
 		padding: 8px;
 		z-index: -1;
 		margin-right: 8px;
+		position: relative;
 		&:last-child{
 			width: 31px;
 			height: 31px;
@@ -95,10 +100,18 @@
 	.time{
 		background: linear-gradient(104.99deg, #74A0FF 1.27%, #506DAB 100%, #506DAB 100%);
 		border-radius: 5px;
-		font-size: 8px;
 		text-align: center;
 		padding: 10px 5px;
-		color: #fff; 
+		color: #fff;
+		display: flex;
+		align-items: baseline;
+		p:first-child{
+			font-size: 10px;
+		}
+		p:nth-child(2){
+			margin-right: 5px;
+			font-size: 8px;
+		} 
 	}
 }
 .price{
@@ -118,8 +131,12 @@
     p{
     	font-size: 18px;
     	color: #fff;
+    	font-weight: 500;
     }
 	}
+.quincy{
+		font-weight: 300;
+	}	
 .arrow-prev{
 	position: absolute;
     top: 43%;
@@ -158,6 +175,7 @@
 		font-size: 12px;
 		position: relative;
 		cursor: pointer;
+		overflow: hidden;
 		img{
 			position: absolute;
 			right: 28px;
@@ -170,11 +188,17 @@
 		max-height: 26px;
 		font-size: 12px;
 		cursor: pointer;
+		font-weight: 300;
+	}
+	a{
+		text-decoration: none;
+		color: #000000;
 	}
 }
 .item-wrap{
-	box-shadow: 0 0 10px rgba(0,0,0,0.2);
+	box-shadow: 0 0 10px rgba(0,0,0,0);
 	position: relative;
+	border-radius: 5px;
 	&:nth-child(n+5){
 		margin-top: 20px;
 	}
@@ -185,20 +209,31 @@
 .content{
 	padding: 20px;
 }
-.content-wrap .circle:last-child{
+.content-wrap .bg-heart:last-child{
 	cursor: pointer;
 	z-index: 1;
 	margin-right: 8px;
 }
 svg{
-	top: 20px;
-    left: 15px;
+    top: 50%;
+    left: 50%;
     fill: white;
     position: absolute;
+    transform: translate(-50%, -50%);
 	&:hover{
 		fill: red;
 	}
 }
 .calendar input{
 	display: none;
+}
+#ui-datepicker-div{
+	padding: 10px;
+    left: 183.891px;
+    top: 67%;
+    background: #fff;
+}
+.ui-datepicker-calendar a{
+	text-decoration: none;
+	
 }
